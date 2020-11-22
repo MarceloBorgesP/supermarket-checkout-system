@@ -14,7 +14,7 @@ You will also see any lint errors in the console.
 
 ### `./wiremock/start.sh`
 
-Runn the mock server api.
+Runs the mock server api.
 
 ### `npm test`
 
