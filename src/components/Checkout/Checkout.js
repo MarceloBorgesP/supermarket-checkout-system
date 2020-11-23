@@ -2,6 +2,8 @@ import Table from 'react-bootstrap/Table';
 import { roundTo2DecimalCases } from '../../utils/utils';
 
 const Checkout = props => {
+  const { basketTotal = [] } = props;
+
   return (
     <Table striped bordered hover>
       <thead>
@@ -13,10 +15,10 @@ const Checkout = props => {
         </tr>
       </thead>
       <tbody>
-        {props.basketTotal.map((basketItem, index) => {
+        {basketTotal.map((basketItem, index) => {
           const quantity = basketItem.amount !== undefined
             ? <span className="font-weight-bold">{basketItem.amount}x</span>
-            : basketItem.amount;
+            : null;
 
           return <tr key={index}>
             <td>{quantity} {basketItem.name}</td>
